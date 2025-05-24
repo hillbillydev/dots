@@ -1,6 +1,0 @@
-[default]
-  {{ if eq .chezmoi.hostname "personal-mbp" }}
-  tags = ["personal"]
-  {{ else if eq .chezmoi.hostname "work-mbp" }}
-  tags = ["work"]
-  {{ end }}
