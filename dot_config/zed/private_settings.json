@@ -12,8 +12,8 @@
   },
   "theme": {
     "mode": "system",
-    "dark": "Ayu Mirage",
-    "light": "Ayu Light"
+    "dark": "Catppuccin Frappé",
+    "light": "Catppuccin Mocha"
   },
   // "indent_guides": {
   //   "enabled": true,
@@ -96,7 +96,8 @@
     "sql": true,
     "git-firefly": true,
     "terraform": true,
-    "codebook": true
+    "codebook": true,
+    "catppuccin": true
   },
   "telemetry": {
     "diagnostics": false,
