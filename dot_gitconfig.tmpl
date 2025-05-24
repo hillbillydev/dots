@@ -1,0 +1,19 @@
+[alias]
+    amend = "!git commit --amend --no-edit"
+
+[init]
+    defaultBranch = master
+
+[github]
+    user = hillbillydev
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  program = gpg
+
+[user]
+  name = {{ .fullname | quote }}
+  email = {{ .email | quote }}
+  signingkey = {{ .signingkey | quote }}
