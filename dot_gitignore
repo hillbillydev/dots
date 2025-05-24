@@ -1,20 +1,38 @@
-# Compiled source #
-###################
+# ========================================
+# OS / System files
+# ========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# ========================================
+# Compiled source
+# ========================================
 *.com
 *.class
 *.dll
 *.exe
 *.o
 *.so
+*.out
+*.test
 
-# Temporary files #
-###################
+# ========================================
+# Temporary / Backup files
+# ========================================
 *.swp
 *.swo
 *~
+*.tmp
+*.bak
+*.orig
 
-# Packages #
-############
+# ========================================
+# Archives / Packages
+# ========================================
 *.7z
 *.dmg
 *.gz
@@ -24,25 +42,84 @@
 *.tar
 *.zip
 
-# Logs #
-######################
+# ========================================
+# Logs
+# ========================================
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# OS generated files #
-######################
-.DS_Store*
-ehthumbs.db
-Icon?
-Thumbs.db
+# ========================================
+# Node.js
+# ========================================
+node_modules/
+dist/
+build/
 
-# Editor files #
-################
-.vscode
+# ========================================
+# Go
+# ========================================
+*.test
+*.out
 
-# XCode #
+# ========================================
+# Python
+# ========================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
 
+# ========================================
+# Rust
+# ========================================
+/target/
+Cargo.lock
+
+# ========================================
+# Editor / IDEs
+# ========================================
+
+# VS Code
+.vscode/
+
+# Zed
+.zed/
+
+# JetBrains IDEs (IntelliJ, Goland, WebStorm, etc.)
+.idea/
+*.iml
+
+# Xcode
 **/xcuserdata/**
-
-## Xcode 8 and earlier
 *.xcscmblueprint
 *.xccheckout
+
+# ========================================
+# Environment / Secrets
+# ========================================
+.env
+.env.*
+
+# ========================================
+# Terraform
+# ========================================
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+
+# ========================================
+# Docker
+# ========================================
+docker-compose.override.yml
+
+# ========================================
+# Coverage / Test output
+# ========================================
+coverage/
+*.lcov
+*.coverprofile
