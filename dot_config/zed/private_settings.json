@@ -1,0 +1,105 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "theme": {
+    "mode": "system",
+    "dark": "Ayu Mirage",
+    "light": "Ayu Light"
+  },
+  // "indent_guides": {
+  //   "enabled": true,
+  //   "coloring": "indent_aware"
+  // },
+  // "inlay_hints": {
+  //   "enabled": true
+  // },
+  "edit_predictions": {
+    "mode": "eager",
+    "enabled_in_text_threads": true
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "ngClass", "styles"]
+      }
+    }
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "languages": {
+    "TypeScript": {
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "format_on_save": "on"
+    },
+    "TSX": {
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "format_on_save": "on"
+    },
+    "JavaScript": {
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "format_on_save": "on"
+    }
+  },
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "never",
+    "surround": true
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
+    },
+    "always_allow_tool_actions": true,
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gemini-2.5-pro"
+    },
+    "version": "2"
+  },
+  "autosave": "on_window_change",
+  "cursor_blink": false,
+  "terminal": {
+    "option_as_meta": true,
+    "env": {
+      "EDITOR": "zed --wait"
+    }
+  },
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "base_keymap": "VSCode",
+  "auto_install_extensions": {
+    "graphql": true,
+    "html": true,
+    "proto": true,
+    "toml": true,
+    "sql": true,
+    "git-firefly": true,
+    "terraform": true,
+    "codebook": true
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  }
+}

@@ -1,0 +1,15 @@
+tap "homebrew/bundle"
+
+brew "go"
+brew "fish"
+brew "fnm"
+brew "watchman"
+brew "gpg"
+brew "pinentry-mac"
+brew "awscli"
+brew "chezmoi"
+
+cask "discord"
+cask "google-chrome"
+cask "docker"
+cask "rectangle"
