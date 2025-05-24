@@ -78,7 +78,6 @@
     "version": "2"
   },
   "autosave": "on_window_change",
-  "cursor_blink": false,
   "terminal": {
     "option_as_meta": true,
     "env": {
