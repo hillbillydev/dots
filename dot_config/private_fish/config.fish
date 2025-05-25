@@ -1,7 +1,6 @@
 set -x GOPATH "$HOME/go"
 set -x EDITOR "zed --wait"
 set -g fish_greeting ""
-set -gx fish_history_merge true
 set -gx fish_history_search_ignore_case true
 
 fish_add_path \
@@ -16,10 +15,11 @@ fish_add_path \
     $HOME/.local/bin \
     $GOPATH/bin
 
-
 fnm env | source
 zoxide init fish | source
 starship init fish | source
+
+fish_vi_key_bindings
 
 bind \cz '__zoxide_zi'
 
