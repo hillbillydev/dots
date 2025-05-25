@@ -1,5 +1,5 @@
 set -x GOPATH "$HOME/go"
-set -x EDITOR zed
+set -x EDITOR "zed --wait"
 
 set -gx PATH /usr/bin $PATH
 set -gx PATH /bin $PATH
