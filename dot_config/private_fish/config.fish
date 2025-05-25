@@ -1,17 +1,28 @@
 set -x GOPATH "$HOME/go"
 set -x EDITOR "zed --wait"
-
-set -gx PATH /usr/bin $PATH
-set -gx PATH /bin $PATH
-set -gx PATH /usr/local/sbin $PATH
-set -gx PATH $GOPATH/bin $PATH
-set -gx PATH /opt/homebrew/bin $PATH
-set -gx PATH /opt/homebrew/sbin $PATH
-set -gx PATH /usr/local/bin $PATH
-set -gx PATH /usr/sbin $PATH
-set -gx PATH /Library/Apple/usr/bin $PATH
-set -gx PATH $HOME/.local/bin $PATH
-
 set -g fish_greeting ""
+set -gx fish_history_merge true
+set -gx fish_history_search_ignore_case true
 
-eval "$(fnm env)"
+fish_add_path \
+    /opt/homebrew/bin \
+    /opt/homebrew/sbin \
+    /usr/local/bin \
+    /usr/local/sbin \
+    /usr/bin \
+    /bin \
+    /usr/sbin \
+    /Library/Apple/usr/bin \
+    $HOME/.local/bin \
+    $GOPATH/bin
+
+
+fnm env | source
+zoxide init fish | source
+starship init fish | source
+
+bind \cz '__zoxide_zi'
+
+alias ls="eza --icons"
+alias cat="bat"
+alias grep="rg"
