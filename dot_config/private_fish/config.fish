@@ -23,6 +23,6 @@ starship init fish | source
 
 bind \cz '__zoxide_zi'
 
-alias ls="eza --icons"
+alias ls="eza --icons --git"
 alias cat="bat"
 alias grep="rg"
