@@ -77,7 +77,6 @@
   "autosave": "on_window_change",
   "terminal": {
     "font_family": "ZedMono Nerd Font",
-    "option_as_meta": true,
     "env": {
       "EDITOR": "zed --wait"
     }
