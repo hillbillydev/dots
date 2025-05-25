@@ -33,32 +33,29 @@
       }
     }
   },
-  "collaboration_panel": {
-    "button": false
-  },
-  "languages": {
-    "TypeScript": {
-      "formatter": "prettier",
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      },
-      "format_on_save": "on"
-    },
-    "TSX": {
-      "formatter": "prettier",
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      },
-      "format_on_save": "on"
-    },
-    "JavaScript": {
-      "formatter": "prettier",
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      },
-      "format_on_save": "on"
-    }
-  },
+  // "languages": {
+  //   "TypeScript": {
+  //     "formatter": "prettier",
+  //     "code_actions_on_format": {
+  //       "source.fixAll.eslint": true
+  //     },
+  //     "format_on_save": "on"
+  //   },
+  //   "TSX": {
+  //     "formatter": "prettier",
+  //     "code_actions_on_format": {
+  //       "source.fixAll.eslint": true
+  //     },
+  //     "format_on_save": "on"
+  //   },
+  //   "JavaScript": {
+  //     "formatter": "prettier",
+  //     "code_actions_on_format": {
+  //       "source.fixAll.eslint": true
+  //     },
+  //     "format_on_save": "on"
+  //   }
+  // },
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "never",
