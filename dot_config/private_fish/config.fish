@@ -19,7 +19,7 @@ fnm env | source
 zoxide init fish | source
 starship init fish | source
 
-fish_vi_key_bindings
+fish_default_key_bindings
 
 bind \cz '__zoxide_zi'
 
