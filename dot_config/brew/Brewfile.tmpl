@@ -25,10 +25,12 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Things", id: 904280696
 
+cask "font-zed-mono-nerd-font"
 cask "ghostty"
 cask "discord"
 cask "google-chrome"
 cask "docker"
 cask "rectangle"
-
-cask "font-zed-mono-nerd-font"
+{{ if eq .chezmoi.hostname "NZMB-FR9FWQMWT2" }}
+cask "camo-studio"
+{{ end }}
