@@ -20,3 +20,6 @@
   name = {{ .fullname | quote }}
   email = {{ .email | quote }}
   signingkey = {{ .signingkey | quote }}
+
+[ghq]
+  root = {{ .chezmoi.homeDir }}/projects
