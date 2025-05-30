@@ -4,6 +4,8 @@ font-size = 14
 
 # Cursor
 cursor-style = block
+cursor-style-blink = false
+
 
 # Appearance
 theme = dark:catppuccin-frappe,light:catppuccin-latte
