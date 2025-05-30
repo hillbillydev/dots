@@ -10,10 +10,15 @@
   "features": {
     "edit_prediction_provider": "copilot"
   },
+  "icon_theme": {
+    "dark": "Catppuccin Frappé",
+    "light": "Catppuccin Latte",
+    "mode": "system"
+  },
   "theme": {
     "mode": "system",
     "dark": "Catppuccin Frappé",
-    "light": "Catppuccin Mocha"
+    "light": "Catppuccin Latte"
   },
   // "indent_guides": {
   //   "enabled": true,
@@ -93,7 +98,8 @@
     "git-firefly": true,
     "terraform": true,
     "codebook": true,
-    "catppuccin": true
+    "catppuccin": true,
+    "catppuccin-icons": true
   },
   "telemetry": {
     "diagnostics": false,
