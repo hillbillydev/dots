@@ -26,3 +26,4 @@ bind \cz '__zoxide_zi'
 alias ls="eza --icons --git"
 alias cat="bat"
 alias grep="rg"
+alias g="git"
