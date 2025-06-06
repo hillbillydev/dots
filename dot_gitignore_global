@@ -1,0 +1,75 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs and temporary files
+*.log
+*.out
+*.pid
+*.swp
+*.tmp
+*.bak
+*.orig
+
+# Editors and IDEs
+.idea/
+.vscode/
+.zed/
+*.sublime-*
+
+# Node / JS
+node_modules/
+dist/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if relevant)
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+venv/
+.env
+
+# Go
+*.test
+*.exe
+*.exe~
+*.out
+vendor/         # if not vendoring
+coverage.txt
+
+# Rust
+target/
+
+# JetBrains IDEs
+*.iml
+*.iws
+*.ipr
+out/
+
+# OS metadata
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Git-specific
+*.patch
+*.diff
+*.rej
+*.orig
+*.merge_backup
+
+# Chezmoi
+.chezmoi*
+private_*
+
+# Optional: backups
+*.old
+*.save
+*.backup
