@@ -54,6 +54,7 @@
       }
     }
   },
+  "cursor_blink": false,
   // "languages": {
   //   "TypeScript": {
   //     "formatter": "prettier",
