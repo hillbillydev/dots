@@ -1,6 +1,7 @@
 [alias]
   s = "!git status"
   amend = "!git commit --amend --no-edit"
+  cleanb = "!git fetch --prune && for b in $(git branch --format='%(refname:short)'); do git show-ref --verify --quiet refs/remotes/origin/$b || git branch -D $b; done"
 
 [init]
   defaultBranch = master
