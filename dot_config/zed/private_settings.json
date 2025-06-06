@@ -92,7 +92,7 @@
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gemini-2.5-pro"
+      "model": "gpt-4.1"
     },
     "version": "2"
   },
