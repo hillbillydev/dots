@@ -2,6 +2,7 @@
   s = "!git status"
   amend = "!git commit --amend --no-edit"
   cleanb = "!git fetch --prune && for b in $(git branch --format='%(refname:short)'); do git show-ref --verify --quiet refs/remotes/origin/$b || git branch -D $b; done"
+  filelog = "!f() { git log --pretty=format:'%h %s' -- \"$1\"; }; f"
 
 [init]
   defaultBranch = master
