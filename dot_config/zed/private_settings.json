@@ -31,7 +31,23 @@
     "mode": "eager",
     "enabled_in_text_threads": true
   },
+  "languages": {
+    "Go": {
+      "language_servers": ["gopls", "golangci-lint"]
+    }
+  },
   "lsp": {
+    "golangci-lint": {
+      "initialization_options": {
+        "command": [
+          "golangci-lint",
+          "run",
+          "--out-format",
+          "json",
+          "--issues-exit-code=1"
+        ]
+      }
+    },
     "tailwindcss-language-server": {
       "settings": {
         "classAttributes": ["class", "className", "ngClass", "styles"]
