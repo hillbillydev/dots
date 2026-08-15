@@ -1,0 +1,68 @@
+export EDITOR="zed --wait"
+export VISUAL="zed --wait"
+export PAGER="less -R"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export CLICOLOR=1
+
+path_prepend() {
+    [ -d "$1" ] || return
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$1${PATH:+:$PATH}" ;;
+    esac
+}
+
+path_prepend "$HOME/.local/bin"
+path_prepend "$HOME/.local/share/mise/shims"
+path_prepend /opt/homebrew/bin
+path_prepend /opt/homebrew/sbin
+path_prepend /home/linuxbrew/.linuxbrew/bin
+path_prepend /home/linuxbrew/.linuxbrew/sbin
+path_prepend /usr/local/bin
+path_prepend /usr/local/sbin
+path_prepend /Library/Apple/usr/bin
+export PATH
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=100000
+SAVEHIST=200000
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt EXTENDED_HISTORY
+setopt AUTO_CD
+
+autoload -Uz compinit && compinit
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+command -v mise >/dev/null && eval "$(mise activate zsh)"
+command -v starship >/dev/null && eval "$(starship init zsh)"
+
+if command -v fzf >/dev/null; then
+    if command -v rg >/dev/null; then
+        export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    fi
+    eval "$(fzf --zsh)"
+fi
+
+[ -f ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
+    source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+if [ -f ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+    source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+fi
+
+# zsh-syntax-highlighting must stay the last thing sourced in this file
+[ -f ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+    source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,16 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+# {{ include (joinPath .chezmoi.sourceDir "dot_Brewfile") | sha256sum }}
+set -eu
+
+if ! command -v brew >/dev/null 2>&1; then
+    NONINTERACTIVE=1 /bin/bash -c \
+        "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+for prefix in /opt/homebrew /usr/local; do
+    [ -x "$prefix/bin/brew" ] && eval "$("$prefix/bin/brew" shellenv)" && break
+done
+
+brew bundle install --global
+{{- end }}

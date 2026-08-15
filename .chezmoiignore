@@ -1,0 +1,11 @@
+# stray literal $HOME dir once created by unexpanded XDG vars; never manage it
+$HOME
+$HOME/**
+
+bootstrap.sh
+
+{{ if ne .chezmoi.os "darwin" }}
+.Brewfile
+.config/zed
+.config/zed/**
+{{ end }}

@@ -1,0 +1,14 @@
+#!/bin/sh
+# {{ include (joinPath .chezmoi.sourceDir "dot_config/mise/config.toml") | sha256sum }}
+set -eu
+
+if command -v mise >/dev/null 2>&1; then
+    mise="$(command -v mise)"
+elif [ -x "$HOME/.local/bin/mise" ]; then
+    mise="$HOME/.local/bin/mise"
+else
+    curl -fsSL https://mise.run | sh
+    mise="$HOME/.local/bin/mise"
+fi
+
+"$mise" install --yes

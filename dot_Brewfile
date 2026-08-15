@@ -1,0 +1,9 @@
+brew "git"
+brew "rsync"
+
+cask "chatgpt"
+cask "claude-code"
+cask "discord"
+cask "google-chrome"
+cask "tailscale-app"
+cask "zed"
