@@ -47,7 +47,8 @@
             }
         }
     },
-    "theme": "Ayu Mirage",
+    "theme": "Catppuccin Frappé",
+    "icon_theme": "Catppuccin Frappé",
     "helix_mode": true,
     "ui_font_family": "BerkeleyMono Nerd Font Mono",
     "buffer_font_family": "BerkeleyMono Nerd Font Mono",
