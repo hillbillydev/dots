@@ -88,6 +88,7 @@
         "graphql": true,
         "html": true,
         "just": true,
+        "mcp-server-context7": true,
         "relay": true,
         "terraform": true
     }
