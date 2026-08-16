@@ -1,86 +1,82 @@
 {
-  "agent_servers": {
-    "claude-acp": {
-      "type": "registry"
-    }
-  },
-  "agent": {
-    "single_file_review": true,
-    "auto_compact": {
-      "enabled": true,
-      "threshold": "85%"
+      "agent_servers": {
+        "claude-acp": {
+            "type": "registry"
+        }
     },
-    "tool_permissions": {
-      "default": "allow",
-      "tools": {
-        "terminal": {
-          "always_confirm": [
-            { "pattern": "\\bsudo\\b" },
-            { "pattern": "\\bgit\\s+(push|commit|reset|clean|rebase|merge)\\b" },
-            { "pattern": "\\brm\\s+.*(-r|-f|--recursive|--force)" }
-          ],
-          "always_deny": [
-            { "pattern": "\\brm\\s+.*(/|~|\\$HOME|\\$\\{HOME\\})(/|\\s|$)" }
-          ]
+    "agent": {
+        "single_file_review": true,
+        "auto_compact": {
+            "enabled": true,
+            "threshold": "85%"
         },
-        "edit_file": {
-          "always_confirm": [
-            { "pattern": "(^|/)\\.env" },
-            { "pattern": "(^|/)secrets?(/|\\.)" },
-            { "pattern": "\\.(pem|key|cert|crt)$" }
-          ]
-        },
-        "write_file": {
-          "always_confirm": [
-            { "pattern": "(^|/)\\.env" },
-            { "pattern": "(^|/)secrets?(/|\\.)" },
-            { "pattern": "\\.(pem|key|cert|crt)$" }
-          ]
-        },
-        "delete_path": {
-          "always_confirm": [
-            { "pattern": ".*" }
-          ]
+        "tool_permissions": {
+            "default": "allow",
+            "tools": {
+                "terminal": {
+                    "always_confirm": [
+                        { "pattern": "\\bsudo\\b" },
+                        {
+                            "pattern": "\\bgit\\s+(push|commit|reset|clean|rebase|merge)\\b"
+                        },
+                        { "pattern": "\\brm\\s+.*(-r|-f|--recursive|--force)" }
+                    ],
+                    "always_deny": [
+                        {
+                            "pattern": "\\brm\\s+.*(/|~|\\$HOME|\\$\\{HOME\\})(/|\\s|$)"
+                        }
+                    ]
+                },
+                "edit_file": {
+                    "always_confirm": [
+                        { "pattern": "(^|/)\\.env" },
+                        { "pattern": "(^|/)secrets?(/|\\.)" },
+                        { "pattern": "\\.(pem|key|cert|crt)$" }
+                    ]
+                },
+                "write_file": {
+                    "always_confirm": [
+                        { "pattern": "(^|/)\\.env" },
+                        { "pattern": "(^|/)secrets?(/|\\.)" },
+                        { "pattern": "\\.(pem|key|cert|crt)$" }
+                    ]
+                },
+                "delete_path": {
+                    "always_confirm": [{ "pattern": ".*" }]
+                }
+            }
         }
-      }
-    }
-  },
-  "theme": "Ayu Mirage",
-  "helix_mode": true,
-  "ui_font_family": "BerkeleyMono Nerd Font Mono",
-  "buffer_font_family": "BerkeleyMono Nerd Font Mono",
-  "buffer_font_size": 14,
-  "terminal": {
-    "font_family": "BerkeleyMono Nerd Font Mono",
-    "font_size": 14
-  },
-  "ssh_connections": [
-    {
-      "host": "devbox",
-      "args": [],
-      "projects": [
+    },
+    "theme": "Ayu Mirage",
+    "helix_mode": true,
+    "ui_font_family": "BerkeleyMono Nerd Font Mono",
+    "buffer_font_family": "BerkeleyMono Nerd Font Mono",
+    "buffer_font_size": 14,
+    "terminal": {
+        "font_family": "BerkeleyMono Nerd Font Mono",
+        "font_size": 14
+    },
+    "ssh_connections": [
         {
-          "paths": [
-            "/home/hillbillydev/code/schedoodle"
-          ]
-        },
-        {
-          "paths": [
-            "/home/hillbillydev/code/north"
-          ]
-        },
-        {
-          "paths": [
-            "~/.local/share/chezmoi"
-          ]
-        },
-        {
-          "paths": [
-            "/home/hillbillydev/code/rowm",
-            "/home/hillbillydev/code/rowmos"
-          ]
+            "host": "devbox",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/home/hillbillydev/code/north"]
+                },
+                {
+                    "paths": ["/home/hillbillydev/code/rowm"]
+                },
+                {
+                    "paths": ["/home/hillbillydev/code/rowmos"]
+                },
+                {
+                    "paths": ["/home/hillbillydev/code/lab"]
+                },
+                {
+                    "paths": ["~/.local/share/chezmoi"]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
