@@ -78,5 +78,16 @@
                 }
             ]
         }
-    ]
+    ],
+    "auto_install_extensions": {
+        "ansible": true,
+        "docker-compose": true,
+        "dockerfile": true,
+        "elixir": true,
+        "graphql": true,
+        "html": true,
+        "just": true,
+        "relay": true,
+        "terraform": true
+    }
 }
