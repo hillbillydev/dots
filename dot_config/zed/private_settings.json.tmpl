@@ -6,21 +6,21 @@
     },
     "context_servers": {
         "mcp-server-context7": {
-            "source": "extension",
             "enabled": true,
             "settings": {
                 "context7_api_key": {{ .context7ApiKey | quote }}
             }
         },
         "mcp-server-github": {
-            "source": "extension",
             "enabled": true,
             "settings": {
                 "github_personal_access_token": {{ .githubMcpToken | quote }}
             }
         },
         "mcp-server-playwright": {
-            "source": "extension",
+            "enabled": true
+        },
+        "postgres-context-server": {
             "enabled": true
         }
     },
@@ -154,11 +154,14 @@
         "dockerfile": true,
         "elixir": true,
         "graphql": true,
+        "github-actions": true,
         "html": true,
         "just": true,
+        "log": true,
         "mcp-server-context7": true,
         "mcp-server-github": true,
         "mcp-server-playwright": true,
+        "postgres-context-server": true,
         "relay": true,
         "terraform": true
     }
