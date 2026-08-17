@@ -55,6 +55,12 @@
                 "diagnostics": {
                     "default": "allow"
                 },
+                "fetch": {
+                    "default": "confirm",
+                    "always_allow": [
+                        { "pattern": "^https://zed\\.dev(/|$)" }
+                    ]
+                },
                 "terminal": {
                     "default": "confirm",
                     "always_allow": [
@@ -71,6 +77,11 @@
                         {
                             "pattern": "^(cat|sed|grep|rg|find|fd|wc|file)\\s"
                         },
+                        {
+                            "pattern": "^(tree|stat|du|df|which|type|realpath|readlink|sort|uniq|cut|jq|yq)\\b"
+                        },
+                        { "pattern": "^command\\s+-v\\s" },
+                        { "pattern": "^(echo|printf|env|printenv)\\b" },
                         { "pattern": "^chezmoi\\s+(diff|status|verify)\\b" }
                     ],
                     "always_confirm": [
