@@ -51,9 +51,11 @@
                 "terminal": {
                     "default": "confirm",
                     "always_allow": [
-                        { "pattern": "^cargo\\s+(build|test|check|clippy|fmt)\\b" },
                         {
-                            "pattern": "^npm\\s+(test|run\\s+(build|test|lint|check|format))\\b"
+                            "pattern": "^(npm|bun)\\s+(test|run\\s+(build|test|lint|check|format))\\b"
+                        },
+                        {
+                            "pattern": "^mix\\s+(compile|test|format|credo|dialyzer)\\b"
                         },
                         {
                             "pattern": "^git\\s+(--no-pager\\s+)?(status|log|diff|show|branch)\\b"
@@ -72,7 +74,13 @@
                         { "pattern": "\\b(rm|mv|chmod|chown)\\b" },
                         { "pattern": "\\b(curl|wget)\\b" },
                         {
-                            "pattern": "\\b(npm|pnpm|yarn|cargo)\\s+(install|ci|publish|login|add|remove|uninstall)\\b"
+                            "pattern": "\\b(npm|pnpm|yarn|bun)\\s+(install|ci|publish|login|add|remove|uninstall|update)\\b"
+                        },
+                        {
+                            "pattern": "^mix\\s+(deps\\.(get|update)|hex\\.publish|local\\.(hex|rebar))\\b"
+                        },
+                        {
+                            "pattern": "^hex\\s+(publish|user\\s+auth)\\b"
                         }
                     ],
                     "always_deny": [
