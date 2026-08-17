@@ -4,6 +4,22 @@
             "type": "registry"
         }
     },
+    "context_servers": {
+        "mcp-server-context7": {
+            "source": "extension",
+            "enabled": true,
+            "settings": {
+                "context7_api_key": {{ .context7ApiKey | quote }}
+            }
+        },
+        "mcp-server-github": {
+            "source": "extension",
+            "enabled": true,
+            "settings": {
+                "github_personal_access_token": {{ .githubMcpToken | quote }}
+            }
+        }
+    },
     "agent": {
         "single_file_review": true,
         "auto_compact": {
@@ -89,6 +105,7 @@
         "html": true,
         "just": true,
         "mcp-server-context7": true,
+        "mcp-server-github": true,
         "relay": true,
         "terraform": true
     }

@@ -4,3 +4,7 @@
 [data]
     githubUser = {{ $githubUser | quote }}
     email = {{ $email | quote }}
+{{- if eq .chezmoi.os "darwin" }}
+    context7ApiKey = {{ promptStringOnce . "context7ApiKey" "Context7 API key" "" | quote }}
+    githubMcpToken = {{ promptStringOnce . "githubMcpToken" "GitHub MCP personal access token" "" | quote }}
+{{- end }}
