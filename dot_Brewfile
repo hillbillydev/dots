@@ -1,6 +1,5 @@
 brew "git"
 brew "rsync"
-brew "watchman"
 
 cask "chatgpt"
 cask "claude-code"
