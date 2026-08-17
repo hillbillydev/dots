@@ -1,5 +1,4 @@
 [tools]
 starship = "latest"
 fzf = "latest"
-ripgrep = "latest"
 gh = "latest"
