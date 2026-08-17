@@ -18,6 +18,10 @@
             "settings": {
                 "github_personal_access_token": {{ .githubMcpToken | quote }}
             }
+        },
+        "mcp-server-playwright": {
+            "source": "extension",
+            "enabled": true
         }
     },
     "agent": {
@@ -27,23 +31,62 @@
             "threshold": "85%"
         },
         "tool_permissions": {
-            "default": "allow",
+            "default": "confirm",
             "tools": {
+                "read_file": {
+                    "default": "allow"
+                },
+                "list_directory": {
+                    "default": "allow"
+                },
+                "find_path": {
+                    "default": "allow"
+                },
+                "grep": {
+                    "default": "allow"
+                },
+                "diagnostics": {
+                    "default": "allow"
+                },
                 "terminal": {
+                    "default": "confirm",
+                    "always_allow": [
+                        { "pattern": "^cargo\\s+(build|test|check|clippy|fmt)\\b" },
+                        {
+                            "pattern": "^npm\\s+(test|run\\s+(build|test|lint|check|format))\\b"
+                        },
+                        {
+                            "pattern": "^git\\s+(--no-pager\\s+)?(status|log|diff|show|branch)\\b"
+                        },
+                        { "pattern": "^(ls|pwd|date|whoami|uname)\\b" },
+                        {
+                            "pattern": "^(cat|sed|grep|rg|find|fd|wc|file)\\s"
+                        },
+                        { "pattern": "^chezmoi\\s+(diff|status|verify)\\b" }
+                    ],
                     "always_confirm": [
                         { "pattern": "\\bsudo\\b" },
                         {
                             "pattern": "\\bgit\\s+(push|commit|reset|clean|rebase|merge)\\b"
                         },
-                        { "pattern": "\\brm\\s+.*(-r|-f|--recursive|--force)" }
+                        { "pattern": "\\b(rm|mv|chmod|chown)\\b" },
+                        { "pattern": "\\b(curl|wget)\\b" },
+                        {
+                            "pattern": "\\b(npm|pnpm|yarn|cargo)\\s+(install|ci|publish|login|add|remove|uninstall)\\b"
+                        }
                     ],
                     "always_deny": [
                         {
-                            "pattern": "\\brm\\s+.*(/|~|\\$HOME|\\$\\{HOME\\})(/|\\s|$)"
+                            "pattern": "\\brm\\s+.*(-r|-f|--recursive|--force).*\\s(/|~|\\$HOME|\\$\\{HOME\\})(/|\\s|$)"
+                        },
+                        { "pattern": "\\bsudo\\s+rm\\b" },
+                        {
+                            "pattern": "\\bgit\\s+push\\s+.*(--force|-f)\\b"
                         }
                     ]
                 },
                 "edit_file": {
+                    "default": "allow",
                     "always_confirm": [
                         { "pattern": "(^|/)\\.env" },
                         { "pattern": "(^|/)secrets?(/|\\.)" },
@@ -51,6 +94,7 @@
                     ]
                 },
                 "write_file": {
+                    "default": "allow",
                     "always_confirm": [
                         { "pattern": "(^|/)\\.env" },
                         { "pattern": "(^|/)secrets?(/|\\.)" },
@@ -58,7 +102,7 @@
                     ]
                 },
                 "delete_path": {
-                    "always_confirm": [{ "pattern": ".*" }]
+                    "default": "confirm"
                 }
             }
         }

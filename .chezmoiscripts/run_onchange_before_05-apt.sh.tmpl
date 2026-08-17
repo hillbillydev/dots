@@ -1,0 +1,21 @@
+{{- if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "debian") -}}
+#!/bin/sh
+set -eu
+
+packages="
+bubblewrap
+"
+
+missing=""
+for package in $packages; do
+    if ! dpkg-query -W -f='${Status}' "$package" 2>/dev/null | grep -q '^install ok installed$'; then
+        missing="$missing $package"
+    fi
+done
+
+if [ -n "$missing" ]; then
+    sudo apt-get update
+    # shellcheck disable=SC2086
+    sudo apt-get install -y $missing
+fi
+{{- end }}
